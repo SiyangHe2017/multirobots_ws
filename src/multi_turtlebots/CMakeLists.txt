@@ -4,6 +4,21 @@ project(multi_turtlebots)
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
+set(RVO_HEADERS
+	include/RVO.h
+	include/RVOSimulator.h
+	include/Vector2.h)
+
+set(RVO_SOURCES
+	include/Agent.cpp
+	include/Agent.h
+	include/Definitions.h
+	include/KdTree.cpp
+	include/KdTree.h
+	include/Obstacle.cpp
+	include/Obstacle.h
+	include/RVOSimulator.cpp)
+
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -117,7 +132,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -125,6 +140,7 @@ include_directories(
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/multi_turtlebots.cpp
 # )
+add_library(RVO ${RVO_HEADERS} ${RVO_SOURCES})
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -136,6 +152,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/multi_turtlebots_node.cpp)
 add_executable(cmdveltest src/cmdveltest.cpp)
+add_executable(rvo_test src/rvo_test.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -153,6 +170,9 @@ add_executable(cmdveltest src/cmdveltest.cpp)
 # )
 target_link_libraries(cmdveltest
     ${catkin_LIBRARIES}
+)
+target_link_libraries(rvo_test 
+	RVO
 )
 
 #############

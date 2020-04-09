@@ -7,9 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/siyang/multirobots_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/siyang/multirobots_ws/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/siyang/multirobots_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/siyang/multirobots_ws/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/siyang/multirobots_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/siyang/multirobots_ws/src:/opt/ros/kinetic/share"

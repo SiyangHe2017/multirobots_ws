@@ -238,6 +238,9 @@ Project_SOURCE_DIR:STATIC=/home/siyang/multirobots_ws/src
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
+//Dependencies for target
+RVO_LIB_DEPENDS:STATIC=
+
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 

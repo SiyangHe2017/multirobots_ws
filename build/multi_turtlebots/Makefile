@@ -466,6 +466,36 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+multi_turtlebots/CMakeFiles/RVO.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/RVO.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/RVO.dir/rule
+
+# Convenience name for target.
+RVO: multi_turtlebots/CMakeFiles/RVO.dir/rule
+
+.PHONY : RVO
+
+# fast build rule for target.
+RVO/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/build
+.PHONY : RVO/fast
+
+# Convenience name for target.
+multi_turtlebots/CMakeFiles/rvo_test.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/rvo_test.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/rvo_test.dir/rule
+
+# Convenience name for target.
+rvo_test: multi_turtlebots/CMakeFiles/rvo_test.dir/rule
+
+.PHONY : rvo_test
+
+# fast build rule for target.
+rvo_test/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/rvo_test.dir/build.make multi_turtlebots/CMakeFiles/rvo_test.dir/build
+.PHONY : rvo_test/fast
+
+# Convenience name for target.
 multi_turtlebots/CMakeFiles/cmdveltest.dir/rule:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/cmdveltest.dir/rule
 .PHONY : multi_turtlebots/CMakeFiles/cmdveltest.dir/rule
@@ -479,6 +509,114 @@ cmdveltest: multi_turtlebots/CMakeFiles/cmdveltest.dir/rule
 cmdveltest/fast:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/cmdveltest.dir/build.make multi_turtlebots/CMakeFiles/cmdveltest.dir/build
 .PHONY : cmdveltest/fast
+
+include/Agent.o: include/Agent.cpp.o
+
+.PHONY : include/Agent.o
+
+# target to build an object file
+include/Agent.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/Agent.cpp.o
+.PHONY : include/Agent.cpp.o
+
+include/Agent.i: include/Agent.cpp.i
+
+.PHONY : include/Agent.i
+
+# target to preprocess a source file
+include/Agent.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/Agent.cpp.i
+.PHONY : include/Agent.cpp.i
+
+include/Agent.s: include/Agent.cpp.s
+
+.PHONY : include/Agent.s
+
+# target to generate assembly for a file
+include/Agent.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/Agent.cpp.s
+.PHONY : include/Agent.cpp.s
+
+include/KdTree.o: include/KdTree.cpp.o
+
+.PHONY : include/KdTree.o
+
+# target to build an object file
+include/KdTree.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/KdTree.cpp.o
+.PHONY : include/KdTree.cpp.o
+
+include/KdTree.i: include/KdTree.cpp.i
+
+.PHONY : include/KdTree.i
+
+# target to preprocess a source file
+include/KdTree.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/KdTree.cpp.i
+.PHONY : include/KdTree.cpp.i
+
+include/KdTree.s: include/KdTree.cpp.s
+
+.PHONY : include/KdTree.s
+
+# target to generate assembly for a file
+include/KdTree.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/KdTree.cpp.s
+.PHONY : include/KdTree.cpp.s
+
+include/Obstacle.o: include/Obstacle.cpp.o
+
+.PHONY : include/Obstacle.o
+
+# target to build an object file
+include/Obstacle.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/Obstacle.cpp.o
+.PHONY : include/Obstacle.cpp.o
+
+include/Obstacle.i: include/Obstacle.cpp.i
+
+.PHONY : include/Obstacle.i
+
+# target to preprocess a source file
+include/Obstacle.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/Obstacle.cpp.i
+.PHONY : include/Obstacle.cpp.i
+
+include/Obstacle.s: include/Obstacle.cpp.s
+
+.PHONY : include/Obstacle.s
+
+# target to generate assembly for a file
+include/Obstacle.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/Obstacle.cpp.s
+.PHONY : include/Obstacle.cpp.s
+
+include/RVOSimulator.o: include/RVOSimulator.cpp.o
+
+.PHONY : include/RVOSimulator.o
+
+# target to build an object file
+include/RVOSimulator.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/RVOSimulator.cpp.o
+.PHONY : include/RVOSimulator.cpp.o
+
+include/RVOSimulator.i: include/RVOSimulator.cpp.i
+
+.PHONY : include/RVOSimulator.i
+
+# target to preprocess a source file
+include/RVOSimulator.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/RVOSimulator.cpp.i
+.PHONY : include/RVOSimulator.cpp.i
+
+include/RVOSimulator.s: include/RVOSimulator.cpp.s
+
+.PHONY : include/RVOSimulator.s
+
+# target to generate assembly for a file
+include/RVOSimulator.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/RVOSimulator.cpp.s
+.PHONY : include/RVOSimulator.cpp.s
 
 src/cmdveltest.o: src/cmdveltest.cpp.o
 
@@ -507,6 +645,33 @@ src/cmdveltest.cpp.s:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/cmdveltest.dir/build.make multi_turtlebots/CMakeFiles/cmdveltest.dir/src/cmdveltest.cpp.s
 .PHONY : src/cmdveltest.cpp.s
 
+src/rvo_test.o: src/rvo_test.cpp.o
+
+.PHONY : src/rvo_test.o
+
+# target to build an object file
+src/rvo_test.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/rvo_test.dir/build.make multi_turtlebots/CMakeFiles/rvo_test.dir/src/rvo_test.cpp.o
+.PHONY : src/rvo_test.cpp.o
+
+src/rvo_test.i: src/rvo_test.cpp.i
+
+.PHONY : src/rvo_test.i
+
+# target to preprocess a source file
+src/rvo_test.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/rvo_test.dir/build.make multi_turtlebots/CMakeFiles/rvo_test.dir/src/rvo_test.cpp.i
+.PHONY : src/rvo_test.cpp.i
+
+src/rvo_test.s: src/rvo_test.cpp.s
+
+.PHONY : src/rvo_test.s
+
+# target to generate assembly for a file
+src/rvo_test.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/rvo_test.dir/build.make multi_turtlebots/CMakeFiles/rvo_test.dir/src/rvo_test.cpp.s
+.PHONY : src/rvo_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -519,6 +684,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
@@ -539,11 +705,27 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... RVO"
+	@echo "... rvo_test"
 	@echo "... cmdveltest"
-	@echo "... install/strip"
+	@echo "... include/Agent.o"
+	@echo "... include/Agent.i"
+	@echo "... include/Agent.s"
+	@echo "... include/KdTree.o"
+	@echo "... include/KdTree.i"
+	@echo "... include/KdTree.s"
+	@echo "... include/Obstacle.o"
+	@echo "... include/Obstacle.i"
+	@echo "... include/Obstacle.s"
+	@echo "... include/RVOSimulator.o"
+	@echo "... include/RVOSimulator.i"
+	@echo "... include/RVOSimulator.s"
 	@echo "... src/cmdveltest.o"
 	@echo "... src/cmdveltest.i"
 	@echo "... src/cmdveltest.s"
+	@echo "... src/rvo_test.o"
+	@echo "... src/rvo_test.i"
+	@echo "... src/rvo_test.s"
 .PHONY : help
 
 

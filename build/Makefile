@@ -543,6 +543,32 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named RVO
+
+# Build rule for target.
+RVO: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RVO
+.PHONY : RVO
+
+# fast build rule for target.
+RVO/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/build
+.PHONY : RVO/fast
+
+#=============================================================================
+# Target rules for targets named rvo_test
+
+# Build rule for target.
+rvo_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rvo_test
+.PHONY : rvo_test
+
+# fast build rule for target.
+rvo_test/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/rvo_test.dir/build.make multi_turtlebots/CMakeFiles/rvo_test.dir/build
+.PHONY : rvo_test/fast
+
+#=============================================================================
 # Target rules for targets named cmdveltest
 
 # Build rule for target.
@@ -597,6 +623,8 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... RVO"
+	@echo "... rvo_test"
 	@echo "... cmdveltest"
 .PHONY : help
 

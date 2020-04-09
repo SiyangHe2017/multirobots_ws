@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/siyang/multirobots_ws/src/multi_turtlebots/include/RVO.h
+RVOSimulator.h
+/home/siyang/multirobots_ws/src/multi_turtlebots/include/RVOSimulator.h
+Vector2.h
+/home/siyang/multirobots_ws/src/multi_turtlebots/include/Vector2.h
+RVO.h
+-
+
+/home/siyang/multirobots_ws/src/multi_turtlebots/include/RVOSimulator.h
+cstddef
+-
+limits
+-
+vector
+-
+Vector2.h
+/home/siyang/multirobots_ws/src/multi_turtlebots/include/Vector2.h
+
+/home/siyang/multirobots_ws/src/multi_turtlebots/include/Vector2.h
+cmath
+-
+ostream
+-
+
+/home/siyang/multirobots_ws/src/multi_turtlebots/src/rvo_test.cpp
+iostream
+-
+RVO.h
+-
+
