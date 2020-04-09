@@ -1,0 +1,2 @@
+multi_turtlebots
+-DCATKIN_DEVEL_PREFIX=/home/siyang/multirobots_ws/devel -DCMAKE_INSTALL_PREFIX=/home/siyang/multirobots_ws/install -G Unix Makefiles

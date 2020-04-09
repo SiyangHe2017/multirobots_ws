@@ -1,0 +1,8 @@
+prefix=/home/siyang/multirobots_ws/install
+
+Name: multi_turtlebots
+Description: Description of multi_turtlebots
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
