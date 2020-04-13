@@ -8,3 +8,4 @@
 
 # modified environment variables
 export PWD="/home/siyang/multirobots_ws/build"
+export ROS_PACKAGE_PATH="/home/siyang/multirobots_ws/src:/opt/ros/kinetic/share"

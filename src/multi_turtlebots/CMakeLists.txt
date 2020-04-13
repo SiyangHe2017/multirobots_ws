@@ -153,6 +153,8 @@ add_library(RVO ${RVO_HEADERS} ${RVO_SOURCES})
 # add_executable(${PROJECT_NAME}_node src/multi_turtlebots_node.cpp)
 add_executable(cmdveltest src/cmdveltest.cpp)
 add_executable(rvo_test src/rvo_test.cpp)
+add_executable(odometry_test src/odometry_test.cpp)
+add_executable(move_robot src/move_robot.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -174,6 +176,14 @@ target_link_libraries(cmdveltest
 target_link_libraries(rvo_test 
 	RVO
 )
+target_link_libraries(odometry_test
+    ${catkin_LIBRARIES}
+)
+target_link_libraries(move_robot
+    ${catkin_LIBRARIES}
+	RVO
+)
+
 
 #############
 ## Install ##

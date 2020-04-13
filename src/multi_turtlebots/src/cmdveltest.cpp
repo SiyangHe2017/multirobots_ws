@@ -9,30 +9,32 @@ int main(int argc,char** argv)
 {
     ros::init(argc, argv, "cmdveltest");
     ros::NodeHandle cmdh;
-    ros::Publisher cmdpub= cmdh.advertise<geometry_msgs::Twist>("/tb3_1/cmd_vel", 10, true);;
-    ros::Rate r(60);
+    ros::Publisher cmdpub= cmdh.advertise<geometry_msgs::Twist>("/tb3_0/cmd_vel", 1000);
+    ros::Publisher cmdpub_2= cmdh.advertise<geometry_msgs::Twist>("/tb3_1/cmd_vel", 1000);
+    ros::Rate r(4);
     int count = 0;
     while(ros::ok()){
         geometry_msgs::Twist twist;
         geometry_msgs::Vector3 linear;
-        linear.x=0.1;
-        linear.y=0;
-        linear.z=0;
+        if(count%6>2){
+            linear.x=0.2;
+        }else{
+            linear.x = 0.5;
+        }
         geometry_msgs::Vector3 angular;
         angular.x=0;
         angular.y=0;
-        //直行
-        //angular.z=0;
-        //转圈
-        angular.z=-0.5;
+        angular.z=0;
         twist.linear=linear;
         twist.angular=angular;
-	count++;
-	ROS_INFO("%d",count);
         cmdpub.publish(twist);
+        angular.z = 0.2;
+        twist.angular=angular;
+        cmdpub_2.publish(twist);
+	    count++;
+	    ROS_INFO("%d",count);
+              
         ros::spinOnce();
-       // ros::spinOnce();
-        //r.sleep();
         r.sleep();
     }
     return 0;

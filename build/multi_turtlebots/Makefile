@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+multi_turtlebots/CMakeFiles/odometry_test.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/odometry_test.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/odometry_test.dir/rule
+
+# Convenience name for target.
+odometry_test: multi_turtlebots/CMakeFiles/odometry_test.dir/rule
+
+.PHONY : odometry_test
+
+# fast build rule for target.
+odometry_test/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/odometry_test.dir/build.make multi_turtlebots/CMakeFiles/odometry_test.dir/build
+.PHONY : odometry_test/fast
+
+# Convenience name for target.
 multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
@@ -194,6 +209,21 @@ geometry_msgs_generate_messages_cpp: multi_turtlebots/CMakeFiles/geometry_msgs_g
 geometry_msgs_generate_messages_cpp/fast:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+multi_turtlebots/CMakeFiles/move_robot.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/move_robot.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/move_robot.dir/rule
+
+# Convenience name for target.
+move_robot: multi_turtlebots/CMakeFiles/move_robot.dir/rule
+
+.PHONY : move_robot
+
+# fast build rule for target.
+move_robot/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/build
+.PHONY : move_robot/fast
 
 # Convenience name for target.
 multi_turtlebots/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
@@ -645,6 +675,60 @@ src/cmdveltest.cpp.s:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/cmdveltest.dir/build.make multi_turtlebots/CMakeFiles/cmdveltest.dir/src/cmdveltest.cpp.s
 .PHONY : src/cmdveltest.cpp.s
 
+src/move_robot.o: src/move_robot.cpp.o
+
+.PHONY : src/move_robot.o
+
+# target to build an object file
+src/move_robot.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/src/move_robot.cpp.o
+.PHONY : src/move_robot.cpp.o
+
+src/move_robot.i: src/move_robot.cpp.i
+
+.PHONY : src/move_robot.i
+
+# target to preprocess a source file
+src/move_robot.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/src/move_robot.cpp.i
+.PHONY : src/move_robot.cpp.i
+
+src/move_robot.s: src/move_robot.cpp.s
+
+.PHONY : src/move_robot.s
+
+# target to generate assembly for a file
+src/move_robot.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/src/move_robot.cpp.s
+.PHONY : src/move_robot.cpp.s
+
+src/odometry_test.o: src/odometry_test.cpp.o
+
+.PHONY : src/odometry_test.o
+
+# target to build an object file
+src/odometry_test.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/odometry_test.dir/build.make multi_turtlebots/CMakeFiles/odometry_test.dir/src/odometry_test.cpp.o
+.PHONY : src/odometry_test.cpp.o
+
+src/odometry_test.i: src/odometry_test.cpp.i
+
+.PHONY : src/odometry_test.i
+
+# target to preprocess a source file
+src/odometry_test.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/odometry_test.dir/build.make multi_turtlebots/CMakeFiles/odometry_test.dir/src/odometry_test.cpp.i
+.PHONY : src/odometry_test.cpp.i
+
+src/odometry_test.s: src/odometry_test.cpp.s
+
+.PHONY : src/odometry_test.s
+
+# target to generate assembly for a file
+src/odometry_test.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/odometry_test.dir/build.make multi_turtlebots/CMakeFiles/odometry_test.dir/src/odometry_test.cpp.s
+.PHONY : src/odometry_test.cpp.s
+
 src/rvo_test.o: src/rvo_test.cpp.o
 
 .PHONY : src/rvo_test.o
@@ -685,8 +769,10 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... odometry_test"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... move_robot"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
@@ -723,6 +809,12 @@ help:
 	@echo "... src/cmdveltest.o"
 	@echo "... src/cmdveltest.i"
 	@echo "... src/cmdveltest.s"
+	@echo "... src/move_robot.o"
+	@echo "... src/move_robot.i"
+	@echo "... src/move_robot.s"
+	@echo "... src/odometry_test.o"
+	@echo "... src/odometry_test.i"
+	@echo "... src/odometry_test.s"
 	@echo "... src/rvo_test.o"
 	@echo "... src/rvo_test.i"
 	@echo "... src/rvo_test.s"
