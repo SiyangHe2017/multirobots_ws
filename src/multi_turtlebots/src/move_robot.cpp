@@ -13,7 +13,7 @@
 #include<nav_msgs/Odometry.h>
 #include<tf/tf.h>
 
-#define ANGULAR_VELOCITY 0.3
+#define ANGULAR_VELOCITY 0.6
 #define PI 3.1415926
 
 
@@ -23,7 +23,7 @@ float tb3_y_position[2];
 float tb3_theta[2];
 float tb3_linear_velocity[2];
 float tb3_angular_velocity[2];
-bool tb3_reached[2];
+bool tb3_reached[2] = {0};
 
 
 void setupScenario(RVO::RVOSimulator* sim) {
@@ -32,17 +32,18 @@ void setupScenario(RVO::RVOSimulator* sim) {
 
   // setAgentDefaults (float neighborDist, size_t maxNeighbors, float timeHorizon, float timeHorizonObst, float radius, float maxSpeed, const Vector2 &velocity=Vector2())
   // Specify default parameters for agents that are subsequently added.
-  sim->setAgentDefaults(8.0f, 10.0f, 5.0f, 5.0f, 0.15f, 1.0f);
+  sim->setAgentDefaults(8.0f, 10.0f, 8.0f, 8.0f, 0.15f, 0.8f);
 
   // Add agents, specifying their start position.
-  sim->addAgent(RVO::Vector2(-3.0f, -3.0f));
-  sim->addAgent(RVO::Vector2(3.0f, -3.0f));
+  sim->addAgent(RVO::Vector2(-2.0f, -2.0f));
+  sim->addAgent(RVO::Vector2(-3.0f, 3.0f));
 
   // Create goals (simulator is unaware of these).
   for (size_t i = 0; i < sim->getNumAgents(); ++i) {
     goals.push_back(-sim->getAgentPosition(i));
   }
 
+  ROS_INFO("%ld",sim->getNumAgents());
   // Add (polygonal) obstacle(s), specifying vertices in counterclockwise order.
   // std::vector<RVO::Vector2> vertices;
   // vertices.push_back(RVO::Vector2(-7.0f, -20.0f));
@@ -71,7 +72,7 @@ void setPreferredVelocities(RVO::RVOSimulator* sim) {
       sim->setAgentPrefVelocity(i, RVO::Vector2(0.0f, 0.0f));
     } else {
       // Agent is far away from its goal, set preferred velocity as unit vector towards agent's goal.
-      sim->setAgentPrefVelocity(i, RVO::normalize(goals[i] - sim->getAgentPosition(i)));
+      sim->setAgentPrefVelocity(i, 0.15*RVO::normalize(goals[i] - sim->getAgentPosition(i)));
     }
   }
 }
@@ -83,8 +84,9 @@ void setVelocityToTurtlebot3(RVO::RVOSimulator* sim){
 
     // angular velocity is determined by orientation and velocity tang
     float temp_orientation = tb3_theta[i];
-    float temp_velocity_tan = atan2(tb3_y_position[i], tb3_x_position[i]);
-    if(abs(temp_orientation-temp_velocity_tan)<0.2){
+    // float temp_velocity_tan = atan2(tb3_y_position[i], tb3_x_position[i]); // problem here !!
+    float temp_velocity_tan = atan2(sim->getAgentVelocity(i).y(), sim->getAgentVelocity(i).x());
+    if(abs(temp_orientation-temp_velocity_tan)<0.05){
       // very close, amost no angular difference
       tb3_angular_velocity[i] = 0.0f;
     }else if(abs(temp_orientation-temp_velocity_tan)<PI){
@@ -102,6 +104,9 @@ void setVelocityToTurtlebot3(RVO::RVOSimulator* sim){
     }
     // when angular velocity is positive, it stands for counter clockwise
     // when angular velocity is negative, it stands for clockwise
+    ROS_INFO("===this is turtlebot3_%ld", i);
+    ROS_INFO("linear velocity:%f", tb3_linear_velocity[i]);
+    ROS_INFO("angular velocity:%f", tb3_angular_velocity[i]);
   }
 }
 
@@ -139,9 +144,12 @@ void new_odom_tb3_0(const nav_msgs::Odometry::ConstPtr &msg){
   m.getRPY(roll, pitch, yaw);
   tb3_theta[0] = yaw;
 
+  ROS_INFO("------tb3_0-----");
   ROS_INFO("%f", tb3_x_position[0]);
 	ROS_INFO("%f", tb3_y_position[0]);
 	ROS_INFO("%f", tb3_theta[0]);
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
 
 }
 
@@ -160,10 +168,12 @@ void new_odom_tb3_1(const nav_msgs::Odometry::ConstPtr &msg){
   m.getRPY(roll, pitch, yaw);
   tb3_theta[1] = yaw;
 
+  ROS_INFO("------tb3_1-----");
   ROS_INFO("%f", tb3_x_position[1]);
 	ROS_INFO("%f", tb3_y_position[1]);
 	ROS_INFO("%f", tb3_theta[1]);
-
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
 }
 
 bool reach_goal(RVO::RVOSimulator* sim){
@@ -172,7 +182,7 @@ bool reach_goal(RVO::RVOSimulator* sim){
     if(tb3_reached[i]){
       continue;
     }
-    if(RVO::absSq(goals[i] - sim->getAgentPosition(i)) > sim->getAgentRadius(i) * sim->getAgentRadius(i)){
+    if(RVO::absSq(goals[i] - sim->getAgentPosition(i)) > 0.12 * sim->getAgentRadius(i) * sim->getAgentRadius(i)){
       result = false;
     }else{
       tb3_reached[i] = true;
