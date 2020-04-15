@@ -24,7 +24,7 @@ float tb3_theta[2];
 float tb3_linear_velocity[2];
 float tb3_angular_velocity[2];
 bool tb3_reached[2] = {0};
-float k_goal_parameter = 0.5;
+float k_goal_parameter = 0.3;
 
 
 void setupScenario(RVO::RVOSimulator* sim) {
@@ -33,11 +33,11 @@ void setupScenario(RVO::RVOSimulator* sim) {
 
   // setAgentDefaults (float neighborDist, size_t maxNeighbors, float timeHorizon, float timeHorizonObst, float radius, float maxSpeed, const Vector2 &velocity=Vector2())
   // Specify default parameters for agents that are subsequently added.
-  sim->setAgentDefaults(8.0f, 10.0f, 8.0f, 8.0f, 0.12f, 0.8f);
+  sim->setAgentDefaults(8.0f, 10.0f, 8.0f, 8.0f, 0.1f, 0.8f);
 
   // Add agents, specifying their start position.
   sim->addAgent(RVO::Vector2(-2.0f, -2.0f));
-  sim->addAgent(RVO::Vector2(-1.0f, 1.0f));  // Notice here !!
+  sim->addAgent(RVO::Vector2(-2.0f, 2.0f));  // Notice here !!
 
   // Create goals (simulator is unaware of these).
   for (std::size_t i = 0; i < sim->getNumAgents(); ++i) {
@@ -87,7 +87,7 @@ void setVelocityToTurtlebot3(RVO::RVOSimulator* sim){
     float temp_orientation = tb3_theta[i];
     // float temp_velocity_tan = atan2(tb3_y_position[i], tb3_x_position[i]); // problem here !!
     float temp_velocity_tan = atan2(sim->getAgentVelocity(i).y(), sim->getAgentVelocity(i).x());
-    if(std::abs(temp_orientation-temp_velocity_tan)<0.05){
+    if(std::abs(temp_orientation-temp_velocity_tan)<0.03){
       // very close, amost no angular difference
       tb3_angular_velocity[i] = 0.0f;
     }else if(std::abs(temp_orientation-temp_velocity_tan)<PI){
