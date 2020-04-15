@@ -37,8 +37,8 @@ void setupScenario(RVO::RVOSimulator* sim) {
   sim->setAgentDefaults(8.0f, 10.0f, 8.0f, 8.0f, 0.1f, 0.8f);
 
   // Add agents, specifying their start position.
-  sim->addAgent(RVO::Vector2(-2.0f, -2.0f));
-  sim->addAgent(RVO::Vector2(-2.0f, 2.0f));  // Notice here !!
+  sim->addAgent(RVO::Vector2(0.0f, -2.0f));
+  sim->addAgent(RVO::Vector2(0.0f, 2.0f));  // Notice here !!
 
   // Create goals (simulator is unaware of these).
   for (std::size_t i = 0; i < sim->getNumAgents(); ++i) {
@@ -208,7 +208,7 @@ void test(RVO::RVOSimulator* sim){
 
 int main(int argc, char ** argv){
 
-	ros::init(argc, argv, "move_two_robot");
+	ros::init(argc, argv, "advanced_move_two_robot");
 	ros::NodeHandle nh;
   ros::Subscriber tb3_sub[2];
   ros::Publisher tb3_pub[2];

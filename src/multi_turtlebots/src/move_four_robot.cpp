@@ -19,12 +19,12 @@
 
 
 std::vector<RVO::Vector2> goals;
-float tb3_x_position[2];
-float tb3_y_position[2];
-float tb3_theta[2];
-float tb3_linear_velocity[2];
-float tb3_angular_velocity[2];
-bool tb3_reached[2] = {0};
+float tb3_x_position[4];
+float tb3_y_position[4];
+float tb3_theta[4];
+float tb3_linear_velocity[4];
+float tb3_angular_velocity[4];
+bool tb3_reached[4] = {0};
 // float k_goal_parameter = 0.3;
 
 
@@ -39,6 +39,8 @@ void setupScenario(RVO::RVOSimulator* sim) {
   // Add agents, specifying their start position.
   sim->addAgent(RVO::Vector2(-2.0f, -2.0f));
   sim->addAgent(RVO::Vector2(-2.0f, 2.0f));  // Notice here !!
+  sim->addAgent(RVO::Vector2(2.0f, -2.0f)); 
+  sim->addAgent(RVO::Vector2(2.0f, 2.0f));   
 
   // Create goals (simulator is unaware of these).
   for (std::size_t i = 0; i < sim->getNumAgents(); ++i) {
@@ -74,7 +76,7 @@ void setPreferredVelocities(RVO::RVOSimulator* sim) {
       sim->setAgentPrefVelocity(i, RVO::Vector2(0.0f, 0.0f));
     } else {
       // Agent is far away from its goal, set preferred velocity as unit vector towards agent's goal.
-      sim->setAgentPrefVelocity(i, 0.15*RVO::normalize(goals[i] - sim->getAgentPosition(i)));
+      sim->setAgentPrefVelocity(i, 0.15 * RVO::normalize(goals[i] - sim->getAgentPosition(i)));
     }
   }
 }
@@ -180,6 +182,52 @@ void new_odom_tb3_1(const nav_msgs::Odometry::ConstPtr &msg){
   ROS_INFO("%f", msg->twist.twist.angular.y);
 }
 
+void new_odom_tb3_2(const nav_msgs::Odometry::ConstPtr &msg){
+
+  tb3_x_position[2] = msg->pose.pose.position.x;
+  tb3_y_position[2] = msg->pose.pose.position.y;
+
+  tf::Quaternion q(
+  msg->pose.pose.orientation.x,
+  msg->pose.pose.orientation.y,
+  msg->pose.pose.orientation.z,
+  msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+  tb3_theta[2] = yaw;
+
+  ROS_INFO("------tb3_2-----");
+  ROS_INFO("%f", tb3_x_position[2]);
+	ROS_INFO("%f", tb3_y_position[2]);
+	ROS_INFO("%f", tb3_theta[2]);
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
+}
+
+void new_odom_tb3_3(const nav_msgs::Odometry::ConstPtr &msg){
+
+  tb3_x_position[3] = msg->pose.pose.position.x;
+  tb3_y_position[3] = msg->pose.pose.position.y;
+
+  tf::Quaternion q(
+  msg->pose.pose.orientation.x,
+  msg->pose.pose.orientation.y,
+  msg->pose.pose.orientation.z,
+  msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+  tb3_theta[3] = yaw;
+
+  ROS_INFO("------tb3_3-----");
+  ROS_INFO("%f", tb3_x_position[3]);
+	ROS_INFO("%f", tb3_y_position[3]);
+	ROS_INFO("%f", tb3_theta[3]);
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
+}
+
 bool reach_goal(RVO::RVOSimulator* sim){
   bool result = true;
   for(std::size_t i=0; i<sim->getNumAgents(); i++){
@@ -208,15 +256,20 @@ void test(RVO::RVOSimulator* sim){
 
 int main(int argc, char ** argv){
 
-	ros::init(argc, argv, "move_two_robot");
+	ros::init(argc, argv, "move_four_robot");
 	ros::NodeHandle nh;
-  ros::Subscriber tb3_sub[2];
-  ros::Publisher tb3_pub[2];
+  ros::Subscriber tb3_sub[4];
+  ros::Publisher tb3_pub[4];
   // notice the buffer size is one. ----------------here--------  
 	tb3_sub[0] = nh.subscribe("/tb3_0/odom", 1, new_odom_tb3_0); 
   tb3_pub[0]= nh.advertise<geometry_msgs::Twist>("/tb3_0/cmd_vel", 1);
   tb3_sub[1] = nh.subscribe("/tb3_1/odom", 1, new_odom_tb3_1);
   tb3_pub[1] = nh.advertise<geometry_msgs::Twist>("/tb3_1/cmd_vel", 1);
+  tb3_sub[2] = nh.subscribe("/tb3_2/odom", 1, new_odom_tb3_2);
+  tb3_pub[2] = nh.advertise<geometry_msgs::Twist>("/tb3_2/cmd_vel", 1); 
+  tb3_sub[3] = nh.subscribe("/tb3_3/odom", 1, new_odom_tb3_3);
+  tb3_pub[3] = nh.advertise<geometry_msgs::Twist>("/tb3_3/cmd_vel", 1);   
+
 
   RVO::RVOSimulator* sim = new RVO::RVOSimulator();
   setupScenario(sim);

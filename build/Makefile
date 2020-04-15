@@ -283,6 +283,32 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named move_four_robot
+
+# Build rule for target.
+move_four_robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_four_robot
+.PHONY : move_four_robot
+
+# fast build rule for target.
+move_four_robot/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/move_four_robot.dir/build
+.PHONY : move_four_robot/fast
+
+#=============================================================================
+# Target rules for targets named advanced_move_two_robot
+
+# Build rule for target.
+advanced_move_two_robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 advanced_move_two_robot
+.PHONY : advanced_move_two_robot
+
+# fast build rule for target.
+advanced_move_two_robot/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/build
+.PHONY : advanced_move_two_robot/fast
+
+#=============================================================================
 # Target rules for targets named basic_move_robot
 
 # Build rule for target.
@@ -642,6 +668,8 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... move_four_robot"
+	@echo "... advanced_move_two_robot"
 	@echo "... basic_move_robot"
 	@echo "... odometry_test"
 	@echo "... geometry_msgs_generate_messages_py"
