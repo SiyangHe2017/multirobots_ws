@@ -283,6 +283,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named basic_move_robot
+
+# Build rule for target.
+basic_move_robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 basic_move_robot
+.PHONY : basic_move_robot
+
+# fast build rule for target.
+basic_move_robot/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/basic_move_robot.dir/build.make multi_turtlebots/CMakeFiles/basic_move_robot.dir/build
+.PHONY : basic_move_robot/fast
+
+#=============================================================================
 # Target rules for targets named odometry_test
 
 # Build rule for target.
@@ -322,19 +335,6 @@ geometry_msgs_generate_messages_cpp/fast:
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named move_robot
-
-# Build rule for target.
-move_robot: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 move_robot
-.PHONY : move_robot
-
-# fast build rule for target.
-move_robot/fast:
-	$(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/build
-.PHONY : move_robot/fast
-
-#=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
@@ -372,6 +372,19 @@ std_msgs_generate_messages_py: cmake_check_build_system
 std_msgs_generate_messages_py/fast:
 	$(MAKE) -f multi_turtlebots/CMakeFiles/std_msgs_generate_messages_py.dir/build.make multi_turtlebots/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named move_two_robot
+
+# Build rule for target.
+move_two_robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_two_robot
+.PHONY : move_two_robot
+
+# fast build rule for target.
+move_two_robot/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/move_two_robot.dir/build
+.PHONY : move_two_robot/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
@@ -629,13 +642,14 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... basic_move_robot"
 	@echo "... odometry_test"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... move_robot"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... move_two_robot"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"

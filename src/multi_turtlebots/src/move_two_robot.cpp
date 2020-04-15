@@ -207,7 +207,7 @@ void test(RVO::RVOSimulator* sim){
 
 int main(int argc, char ** argv){
 
-	ros::init(argc, argv, "move_robot");
+	ros::init(argc, argv, "move_two_robot");
 	ros::NodeHandle nh;
   ros::Subscriber tb3_sub[2];
   ros::Publisher tb3_pub[2];

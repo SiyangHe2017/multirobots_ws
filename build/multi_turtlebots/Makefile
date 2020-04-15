@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+multi_turtlebots/CMakeFiles/basic_move_robot.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/basic_move_robot.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/basic_move_robot.dir/rule
+
+# Convenience name for target.
+basic_move_robot: multi_turtlebots/CMakeFiles/basic_move_robot.dir/rule
+
+.PHONY : basic_move_robot
+
+# fast build rule for target.
+basic_move_robot/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/basic_move_robot.dir/build.make multi_turtlebots/CMakeFiles/basic_move_robot.dir/build
+.PHONY : basic_move_robot/fast
+
+# Convenience name for target.
 multi_turtlebots/CMakeFiles/odometry_test.dir/rule:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/odometry_test.dir/rule
 .PHONY : multi_turtlebots/CMakeFiles/odometry_test.dir/rule
@@ -211,21 +226,6 @@ geometry_msgs_generate_messages_cpp/fast:
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-multi_turtlebots/CMakeFiles/move_robot.dir/rule:
-	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/move_robot.dir/rule
-.PHONY : multi_turtlebots/CMakeFiles/move_robot.dir/rule
-
-# Convenience name for target.
-move_robot: multi_turtlebots/CMakeFiles/move_robot.dir/rule
-
-.PHONY : move_robot
-
-# fast build rule for target.
-move_robot/fast:
-	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/build
-.PHONY : move_robot/fast
-
-# Convenience name for target.
 multi_turtlebots/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : multi_turtlebots/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
@@ -269,6 +269,21 @@ std_msgs_generate_messages_py: multi_turtlebots/CMakeFiles/std_msgs_generate_mes
 std_msgs_generate_messages_py/fast:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/std_msgs_generate_messages_py.dir/build.make multi_turtlebots/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+multi_turtlebots/CMakeFiles/move_two_robot.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/move_two_robot.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/move_two_robot.dir/rule
+
+# Convenience name for target.
+move_two_robot: multi_turtlebots/CMakeFiles/move_two_robot.dir/rule
+
+.PHONY : move_two_robot
+
+# fast build rule for target.
+move_two_robot/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/move_two_robot.dir/build
+.PHONY : move_two_robot/fast
 
 # Convenience name for target.
 multi_turtlebots/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
@@ -648,6 +663,33 @@ include/RVOSimulator.cpp.s:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/RVOSimulator.cpp.s
 .PHONY : include/RVOSimulator.cpp.s
 
+src/basic_move_robot.o: src/basic_move_robot.cpp.o
+
+.PHONY : src/basic_move_robot.o
+
+# target to build an object file
+src/basic_move_robot.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/basic_move_robot.dir/build.make multi_turtlebots/CMakeFiles/basic_move_robot.dir/src/basic_move_robot.cpp.o
+.PHONY : src/basic_move_robot.cpp.o
+
+src/basic_move_robot.i: src/basic_move_robot.cpp.i
+
+.PHONY : src/basic_move_robot.i
+
+# target to preprocess a source file
+src/basic_move_robot.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/basic_move_robot.dir/build.make multi_turtlebots/CMakeFiles/basic_move_robot.dir/src/basic_move_robot.cpp.i
+.PHONY : src/basic_move_robot.cpp.i
+
+src/basic_move_robot.s: src/basic_move_robot.cpp.s
+
+.PHONY : src/basic_move_robot.s
+
+# target to generate assembly for a file
+src/basic_move_robot.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/basic_move_robot.dir/build.make multi_turtlebots/CMakeFiles/basic_move_robot.dir/src/basic_move_robot.cpp.s
+.PHONY : src/basic_move_robot.cpp.s
+
 src/cmdveltest.o: src/cmdveltest.cpp.o
 
 .PHONY : src/cmdveltest.o
@@ -675,32 +717,32 @@ src/cmdveltest.cpp.s:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/cmdveltest.dir/build.make multi_turtlebots/CMakeFiles/cmdveltest.dir/src/cmdveltest.cpp.s
 .PHONY : src/cmdveltest.cpp.s
 
-src/move_robot.o: src/move_robot.cpp.o
+src/move_two_robot.o: src/move_two_robot.cpp.o
 
-.PHONY : src/move_robot.o
+.PHONY : src/move_two_robot.o
 
 # target to build an object file
-src/move_robot.cpp.o:
-	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/src/move_robot.cpp.o
-.PHONY : src/move_robot.cpp.o
+src/move_two_robot.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/move_two_robot.dir/src/move_two_robot.cpp.o
+.PHONY : src/move_two_robot.cpp.o
 
-src/move_robot.i: src/move_robot.cpp.i
+src/move_two_robot.i: src/move_two_robot.cpp.i
 
-.PHONY : src/move_robot.i
+.PHONY : src/move_two_robot.i
 
 # target to preprocess a source file
-src/move_robot.cpp.i:
-	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/src/move_robot.cpp.i
-.PHONY : src/move_robot.cpp.i
+src/move_two_robot.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/move_two_robot.dir/src/move_two_robot.cpp.i
+.PHONY : src/move_two_robot.cpp.i
 
-src/move_robot.s: src/move_robot.cpp.s
+src/move_two_robot.s: src/move_two_robot.cpp.s
 
-.PHONY : src/move_robot.s
+.PHONY : src/move_two_robot.s
 
 # target to generate assembly for a file
-src/move_robot.cpp.s:
-	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_robot.dir/build.make multi_turtlebots/CMakeFiles/move_robot.dir/src/move_robot.cpp.s
-.PHONY : src/move_robot.cpp.s
+src/move_two_robot.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/move_two_robot.dir/src/move_two_robot.cpp.s
+.PHONY : src/move_two_robot.cpp.s
 
 src/odometry_test.o: src/odometry_test.cpp.o
 
@@ -769,13 +811,14 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... basic_move_robot"
 	@echo "... odometry_test"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... move_robot"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... move_two_robot"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
@@ -806,12 +849,15 @@ help:
 	@echo "... include/RVOSimulator.o"
 	@echo "... include/RVOSimulator.i"
 	@echo "... include/RVOSimulator.s"
+	@echo "... src/basic_move_robot.o"
+	@echo "... src/basic_move_robot.i"
+	@echo "... src/basic_move_robot.s"
 	@echo "... src/cmdveltest.o"
 	@echo "... src/cmdveltest.i"
 	@echo "... src/cmdveltest.s"
-	@echo "... src/move_robot.o"
-	@echo "... src/move_robot.i"
-	@echo "... src/move_robot.s"
+	@echo "... src/move_two_robot.o"
+	@echo "... src/move_two_robot.i"
+	@echo "... src/move_two_robot.s"
 	@echo "... src/odometry_test.o"
 	@echo "... src/odometry_test.i"
 	@echo "... src/odometry_test.s"
