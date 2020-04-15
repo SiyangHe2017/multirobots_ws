@@ -6,7 +6,7 @@
   <arg name="fourth_tb3"  default="tb3_3"/>
 
   <arg name="first_tb3_x_pos" default="-1.0"/>
-  <arg name="first_tb3_y_pos" default="-210"/>
+  <arg name="first_tb3_y_pos" default="-1.0"/>
   <arg name="first_tb3_z_pos" default=" 0.0"/>
   <arg name="first_tb3_yaw"   default=" 1.57"/>
 
