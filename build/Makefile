@@ -283,6 +283,32 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named move_eight_robot
+
+# Build rule for target.
+move_eight_robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_eight_robot
+.PHONY : move_eight_robot
+
+# fast build rule for target.
+move_eight_robot/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_robot.dir/build
+.PHONY : move_eight_robot/fast
+
+#=============================================================================
+# Target rules for targets named move_eight_circle_robot
+
+# Build rule for target.
+move_eight_circle_robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_eight_circle_robot
+.PHONY : move_eight_circle_robot
+
+# fast build rule for target.
+move_eight_circle_robot/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build
+.PHONY : move_eight_circle_robot/fast
+
+#=============================================================================
 # Target rules for targets named move_four_robot
 
 # Build rule for target.
@@ -668,6 +694,8 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... move_eight_robot"
+	@echo "... move_eight_circle_robot"
 	@echo "... move_four_robot"
 	@echo "... advanced_move_two_robot"
 	@echo "... basic_move_robot"

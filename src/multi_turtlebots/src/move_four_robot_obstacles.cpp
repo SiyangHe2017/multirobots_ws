@@ -56,6 +56,8 @@ void setupScenario(RVO::RVOSimulator* sim) {
   // vertices.push_back(RVO::Vector2(7.0f, 20.0f));
   // vertices.push_back(RVO::Vector2(-7.0f, 20.0f));
 
+  
+
   // sim->addObstacle(vertices);
 
   // Process obstacles so that they are accounted for in the simulation.

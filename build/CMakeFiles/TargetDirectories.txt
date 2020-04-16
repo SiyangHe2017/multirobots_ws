@@ -35,6 +35,8 @@
 /home/siyang/multirobots_ws/build/multi_turtlebots/CMakeFiles/test.dir
 /home/siyang/multirobots_ws/build/multi_turtlebots/CMakeFiles/install/local.dir
 /home/siyang/multirobots_ws/build/multi_turtlebots/CMakeFiles/install/strip.dir
+/home/siyang/multirobots_ws/build/multi_turtlebots/CMakeFiles/move_eight_robot.dir
+/home/siyang/multirobots_ws/build/multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir
 /home/siyang/multirobots_ws/build/multi_turtlebots/CMakeFiles/move_four_robot.dir
 /home/siyang/multirobots_ws/build/multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir
 /home/siyang/multirobots_ws/build/multi_turtlebots/CMakeFiles/basic_move_robot.dir

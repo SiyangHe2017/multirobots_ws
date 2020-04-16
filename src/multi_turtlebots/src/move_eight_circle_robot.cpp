@@ -16,16 +16,16 @@
 #define ANGULAR_VELOCITY 0.5
 #define PI 3.1415926
 #define K_GOAL_PARAMETER 0.3
-#define PREFER_VELOCITY_FACTOR 0.15
-
+#define PREFER_VELOCITY_FACTOR 0.2
+#define TB3_NUMBER 8
 
 std::vector<RVO::Vector2> goals;
-float tb3_x_position[4];
-float tb3_y_position[4];
-float tb3_theta[4];
-float tb3_linear_velocity[4];
-float tb3_angular_velocity[4];
-bool tb3_reached[4] = {0};
+float tb3_x_position[TB3_NUMBER];
+float tb3_y_position[TB3_NUMBER];
+float tb3_theta[TB3_NUMBER];
+float tb3_linear_velocity[TB3_NUMBER];
+float tb3_angular_velocity[TB3_NUMBER];
+bool tb3_reached[TB3_NUMBER] = {0};
 // float k_goal_parameter = 0.3;
 
 
@@ -38,10 +38,15 @@ void setupScenario(RVO::RVOSimulator* sim) {
   sim->setAgentDefaults(8.0f, 10.0f, 8.0f, 8.0f, 0.1f, 0.8f);
 
   // Add agents, specifying their start position.
-  sim->addAgent(RVO::Vector2(-2.0f, -2.0f));
-  sim->addAgent(RVO::Vector2(-2.0f, 2.0f));  // Notice here !!
-  sim->addAgent(RVO::Vector2(2.0f, -2.0f)); 
-  sim->addAgent(RVO::Vector2(2.0f, 2.0f));   
+  sim->addAgent(RVO::Vector2(-1.41421356f, -1.41421356f));
+  sim->addAgent(RVO::Vector2(-1.41421356f, 1.41421356f));  // Notice here !!
+  sim->addAgent(RVO::Vector2(1.41421356f, -1.41421356f)); 
+  sim->addAgent(RVO::Vector2(1.41421356f, 1.41421356f)); 
+
+  sim->addAgent(RVO::Vector2(2.0f, 0.0f));
+  sim->addAgent(RVO::Vector2(0.0f, 2.0f));  // Notice here !!
+  sim->addAgent(RVO::Vector2(-2.0f, 0.0f)); 
+  sim->addAgent(RVO::Vector2(0.0f, -2.0f));   
 
   // Create goals (simulator is unaware of these).
   for (std::size_t i = 0; i < sim->getNumAgents(); ++i) {
@@ -229,6 +234,98 @@ void new_odom_tb3_3(const nav_msgs::Odometry::ConstPtr &msg){
   ROS_INFO("%f", msg->twist.twist.angular.y);
 }
 
+void new_odom_tb3_4(const nav_msgs::Odometry::ConstPtr &msg){
+
+  tb3_x_position[4] = msg->pose.pose.position.x;
+  tb3_y_position[4] = msg->pose.pose.position.y;
+
+  tf::Quaternion q(
+  msg->pose.pose.orientation.x,
+  msg->pose.pose.orientation.y,
+  msg->pose.pose.orientation.z,
+  msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+  tb3_theta[4] = yaw;
+
+  ROS_INFO("------tb3_4-----");
+  ROS_INFO("%f", tb3_x_position[4]);
+	ROS_INFO("%f", tb3_y_position[4]);
+	ROS_INFO("%f", tb3_theta[4]);
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
+}
+
+void new_odom_tb3_5(const nav_msgs::Odometry::ConstPtr &msg){
+
+  tb3_x_position[5] = msg->pose.pose.position.x;
+  tb3_y_position[5] = msg->pose.pose.position.y;
+
+  tf::Quaternion q(
+  msg->pose.pose.orientation.x,
+  msg->pose.pose.orientation.y,
+  msg->pose.pose.orientation.z,
+  msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+  tb3_theta[5] = yaw;
+
+  ROS_INFO("------tb3_5-----");
+  ROS_INFO("%f", tb3_x_position[5]);
+	ROS_INFO("%f", tb3_y_position[5]);
+	ROS_INFO("%f", tb3_theta[5]);
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
+}
+
+void new_odom_tb3_6(const nav_msgs::Odometry::ConstPtr &msg){
+
+  tb3_x_position[6] = msg->pose.pose.position.x;
+  tb3_y_position[6] = msg->pose.pose.position.y;
+
+  tf::Quaternion q(
+  msg->pose.pose.orientation.x,
+  msg->pose.pose.orientation.y,
+  msg->pose.pose.orientation.z,
+  msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+  tb3_theta[6] = yaw;
+
+  ROS_INFO("------tb3_6-----");
+  ROS_INFO("%f", tb3_x_position[6]);
+	ROS_INFO("%f", tb3_y_position[6]);
+	ROS_INFO("%f", tb3_theta[6]);
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
+}
+
+void new_odom_tb3_7(const nav_msgs::Odometry::ConstPtr &msg){
+
+  tb3_x_position[7] = msg->pose.pose.position.x;
+  tb3_y_position[7] = msg->pose.pose.position.y;
+
+  tf::Quaternion q(
+  msg->pose.pose.orientation.x,
+  msg->pose.pose.orientation.y,
+  msg->pose.pose.orientation.z,
+  msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+  tb3_theta[7] = yaw;
+
+  ROS_INFO("------tb3_7-----");
+  ROS_INFO("%f", tb3_x_position[7]);
+	ROS_INFO("%f", tb3_y_position[7]);
+	ROS_INFO("%f", tb3_theta[7]);
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
+}
+
 bool reach_goal(RVO::RVOSimulator* sim){
   bool result = true;
   for(std::size_t i=0; i<sim->getNumAgents(); i++){
@@ -259,8 +356,8 @@ int main(int argc, char ** argv){
 
 	ros::init(argc, argv, "move_four_robot");
 	ros::NodeHandle nh;
-  ros::Subscriber tb3_sub[4];
-  ros::Publisher tb3_pub[4];
+  ros::Subscriber tb3_sub[TB3_NUMBER];
+  ros::Publisher tb3_pub[TB3_NUMBER];
   // notice the buffer size is one. ----------------here--------  
 	tb3_sub[0] = nh.subscribe("/tb3_0/odom", 1, new_odom_tb3_0); 
   tb3_pub[0]= nh.advertise<geometry_msgs::Twist>("/tb3_0/cmd_vel", 1);
@@ -271,6 +368,14 @@ int main(int argc, char ** argv){
   tb3_sub[3] = nh.subscribe("/tb3_3/odom", 1, new_odom_tb3_3);
   tb3_pub[3] = nh.advertise<geometry_msgs::Twist>("/tb3_3/cmd_vel", 1);   
 
+  tb3_sub[4] = nh.subscribe("/tb3_4/odom", 1, new_odom_tb3_4); 
+  tb3_pub[4] = nh.advertise<geometry_msgs::Twist>("/tb3_4/cmd_vel", 1);
+  tb3_sub[5] = nh.subscribe("/tb3_5/odom", 1, new_odom_tb3_5);
+  tb3_pub[5] = nh.advertise<geometry_msgs::Twist>("/tb3_5/cmd_vel", 1);
+  tb3_sub[6] = nh.subscribe("/tb3_6/odom", 1, new_odom_tb3_6);
+  tb3_pub[6] = nh.advertise<geometry_msgs::Twist>("/tb3_6/cmd_vel", 1); 
+  tb3_sub[7] = nh.subscribe("/tb3_7/odom", 1, new_odom_tb3_7);
+  tb3_pub[7] = nh.advertise<geometry_msgs::Twist>("/tb3_7/cmd_vel", 1); 
 
   RVO::RVOSimulator* sim = new RVO::RVOSimulator();
   setupScenario(sim);

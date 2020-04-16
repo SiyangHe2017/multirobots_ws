@@ -166,6 +166,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+multi_turtlebots/CMakeFiles/move_eight_robot.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/move_eight_robot.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/move_eight_robot.dir/rule
+
+# Convenience name for target.
+move_eight_robot: multi_turtlebots/CMakeFiles/move_eight_robot.dir/rule
+
+.PHONY : move_eight_robot
+
+# fast build rule for target.
+move_eight_robot/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_robot.dir/build
+.PHONY : move_eight_robot/fast
+
+# Convenience name for target.
+multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/rule
+
+# Convenience name for target.
+move_eight_circle_robot: multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/rule
+
+.PHONY : move_eight_circle_robot
+
+# fast build rule for target.
+move_eight_circle_robot/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build
+.PHONY : move_eight_circle_robot/fast
+
+# Convenience name for target.
 multi_turtlebots/CMakeFiles/move_four_robot.dir/rule:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/move_four_robot.dir/rule
 .PHONY : multi_turtlebots/CMakeFiles/move_four_robot.dir/rule
@@ -774,6 +804,60 @@ src/cmdveltest.cpp.s:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/cmdveltest.dir/build.make multi_turtlebots/CMakeFiles/cmdveltest.dir/src/cmdveltest.cpp.s
 .PHONY : src/cmdveltest.cpp.s
 
+src/move_eight_circle_robot.o: src/move_eight_circle_robot.cpp.o
+
+.PHONY : src/move_eight_circle_robot.o
+
+# target to build an object file
+src/move_eight_circle_robot.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/src/move_eight_circle_robot.cpp.o
+.PHONY : src/move_eight_circle_robot.cpp.o
+
+src/move_eight_circle_robot.i: src/move_eight_circle_robot.cpp.i
+
+.PHONY : src/move_eight_circle_robot.i
+
+# target to preprocess a source file
+src/move_eight_circle_robot.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/src/move_eight_circle_robot.cpp.i
+.PHONY : src/move_eight_circle_robot.cpp.i
+
+src/move_eight_circle_robot.s: src/move_eight_circle_robot.cpp.s
+
+.PHONY : src/move_eight_circle_robot.s
+
+# target to generate assembly for a file
+src/move_eight_circle_robot.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/src/move_eight_circle_robot.cpp.s
+.PHONY : src/move_eight_circle_robot.cpp.s
+
+src/move_eight_robot.o: src/move_eight_robot.cpp.o
+
+.PHONY : src/move_eight_robot.o
+
+# target to build an object file
+src/move_eight_robot.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_robot.dir/src/move_eight_robot.cpp.o
+.PHONY : src/move_eight_robot.cpp.o
+
+src/move_eight_robot.i: src/move_eight_robot.cpp.i
+
+.PHONY : src/move_eight_robot.i
+
+# target to preprocess a source file
+src/move_eight_robot.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_robot.dir/src/move_eight_robot.cpp.i
+.PHONY : src/move_eight_robot.cpp.i
+
+src/move_eight_robot.s: src/move_eight_robot.cpp.s
+
+.PHONY : src/move_eight_robot.s
+
+# target to generate assembly for a file
+src/move_eight_robot.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_robot.dir/src/move_eight_robot.cpp.s
+.PHONY : src/move_eight_robot.cpp.s
+
 src/move_four_robot.o: src/move_four_robot.cpp.o
 
 .PHONY : src/move_four_robot.o
@@ -895,6 +979,8 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... move_eight_robot"
+	@echo "... move_eight_circle_robot"
 	@echo "... move_four_robot"
 	@echo "... advanced_move_two_robot"
 	@echo "... basic_move_robot"
@@ -944,6 +1030,12 @@ help:
 	@echo "... src/cmdveltest.o"
 	@echo "... src/cmdveltest.i"
 	@echo "... src/cmdveltest.s"
+	@echo "... src/move_eight_circle_robot.o"
+	@echo "... src/move_eight_circle_robot.i"
+	@echo "... src/move_eight_circle_robot.s"
+	@echo "... src/move_eight_robot.o"
+	@echo "... src/move_eight_robot.i"
+	@echo "... src/move_eight_robot.s"
 	@echo "... src/move_four_robot.o"
 	@echo "... src/move_four_robot.i"
 	@echo "... src/move_four_robot.s"
