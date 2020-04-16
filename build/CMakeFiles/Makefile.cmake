@@ -204,6 +204,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
+  "multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/std_msgs_generate_messages_eus.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/DependInfo.cmake"

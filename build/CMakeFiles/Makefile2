@@ -246,7 +246,7 @@ gtest/preinstall: gtest/gtest/preinstall
 gtest/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=12,13,14 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=14,15,16 "Built target gmock"
 .PHONY : gtest/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -278,7 +278,7 @@ clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=15,16,17,18 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=17,18,19,20 "Built target gmock_main"
 .PHONY : gtest/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -329,7 +329,7 @@ gtest/gtest/preinstall:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=19,20 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=21,22 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -361,7 +361,7 @@ clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=21,22 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=23,24 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -398,6 +398,7 @@ multi_turtlebots/all: multi_turtlebots/CMakeFiles/basic_move_robot.dir/all
 multi_turtlebots/all: multi_turtlebots/CMakeFiles/odometry_test.dir/all
 multi_turtlebots/all: multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/all
 multi_turtlebots/all: multi_turtlebots/CMakeFiles/move_two_robot.dir/all
+multi_turtlebots/all: multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/all
 multi_turtlebots/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 multi_turtlebots/all: multi_turtlebots/CMakeFiles/rvo_test.dir/all
 multi_turtlebots/all: multi_turtlebots/CMakeFiles/cmdveltest.dir/all
@@ -422,6 +423,7 @@ multi_turtlebots/clean: multi_turtlebots/CMakeFiles/std_msgs_generate_messages_l
 multi_turtlebots/clean: multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 multi_turtlebots/clean: multi_turtlebots/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 multi_turtlebots/clean: multi_turtlebots/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+multi_turtlebots/clean: multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/clean
 multi_turtlebots/clean: multi_turtlebots/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 multi_turtlebots/clean: multi_turtlebots/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 multi_turtlebots/clean: multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
@@ -451,7 +453,7 @@ multi_turtlebots/preinstall:
 multi_turtlebots/CMakeFiles/move_eight_robot.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_robot.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=25,26 "Built target move_eight_robot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=27,28 "Built target move_eight_robot"
 .PHONY : multi_turtlebots/CMakeFiles/move_eight_robot.dir/all
 
 # Include target in all.
@@ -488,7 +490,7 @@ clean: multi_turtlebots/CMakeFiles/move_eight_robot.dir/clean
 multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build.make multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=23,24 "Built target move_eight_circle_robot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=25,26 "Built target move_eight_circle_robot"
 .PHONY : multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/all
 
 # Include target in all.
@@ -525,7 +527,7 @@ clean: multi_turtlebots/CMakeFiles/move_eight_circle_robot.dir/clean
 multi_turtlebots/CMakeFiles/move_four_robot.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/move_four_robot.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/move_four_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=27,28 "Built target move_four_robot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=29,30 "Built target move_four_robot"
 .PHONY : multi_turtlebots/CMakeFiles/move_four_robot.dir/all
 
 # Include target in all.
@@ -562,7 +564,7 @@ clean: multi_turtlebots/CMakeFiles/move_four_robot.dir/clean
 multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 	$(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=6,7 "Built target advanced_move_two_robot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=8,9 "Built target advanced_move_two_robot"
 .PHONY : multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/all
 
 # Include target in all.
@@ -599,7 +601,7 @@ clean: multi_turtlebots/CMakeFiles/advanced_move_two_robot.dir/clean
 multi_turtlebots/CMakeFiles/basic_move_robot.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 	$(MAKE) -f multi_turtlebots/CMakeFiles/basic_move_robot.dir/build.make multi_turtlebots/CMakeFiles/basic_move_robot.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/basic_move_robot.dir/build.make multi_turtlebots/CMakeFiles/basic_move_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=8,9 "Built target basic_move_robot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=10,11 "Built target basic_move_robot"
 .PHONY : multi_turtlebots/CMakeFiles/basic_move_robot.dir/all
 
 # Include target in all.
@@ -636,7 +638,7 @@ clean: multi_turtlebots/CMakeFiles/basic_move_robot.dir/clean
 multi_turtlebots/CMakeFiles/odometry_test.dir/all:
 	$(MAKE) -f multi_turtlebots/CMakeFiles/odometry_test.dir/build.make multi_turtlebots/CMakeFiles/odometry_test.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/odometry_test.dir/build.make multi_turtlebots/CMakeFiles/odometry_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=33,34 "Built target odometry_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=35,36 "Built target odometry_test"
 .PHONY : multi_turtlebots/CMakeFiles/odometry_test.dir/all
 
 # Include target in all.
@@ -705,7 +707,7 @@ clean: multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/build.make multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/build.make multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=29,30 "Built target move_four_robot_obstacles"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=31,32 "Built target move_four_robot_obstacles"
 .PHONY : multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/all
 
 # Include target in all.
@@ -870,7 +872,7 @@ clean: multi_turtlebots/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 multi_turtlebots/CMakeFiles/move_two_robot.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/move_two_robot.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/move_two_robot.dir/build.make multi_turtlebots/CMakeFiles/move_two_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=31,32 "Built target move_two_robot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=33,34 "Built target move_two_robot"
 .PHONY : multi_turtlebots/CMakeFiles/move_two_robot.dir/all
 
 # Include target in all.
@@ -1025,6 +1027,43 @@ multi_turtlebots/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
 
 # clean rule for target.
 clean: multi_turtlebots/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir
+
+# All Build rule for target.
+multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
+	$(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/depend
+	$(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=6,7 "Built target advanced_move_four_robot"
+.PHONY : multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/all
+
+# Include target in all.
+all: multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/siyang/multirobots_ws/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/siyang/multirobots_ws/build/CMakeFiles 0
+.PHONY : multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/rule
+
+# Convenience name for target.
+advanced_move_four_robot: multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/rule
+
+.PHONY : advanced_move_four_robot
+
+# clean rule for target.
+multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/clean:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/clean
+.PHONY : multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/clean
+
+# clean rule for target.
+clean: multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/clean
 
 .PHONY : clean
 
@@ -1424,7 +1463,7 @@ clean: multi_turtlebots/CMakeFiles/RVO.dir/clean
 multi_turtlebots/CMakeFiles/rvo_test.dir/all: multi_turtlebots/CMakeFiles/RVO.dir/all
 	$(MAKE) -f multi_turtlebots/CMakeFiles/rvo_test.dir/build.make multi_turtlebots/CMakeFiles/rvo_test.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/rvo_test.dir/build.make multi_turtlebots/CMakeFiles/rvo_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=35,36 "Built target rvo_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=37,38 "Built target rvo_test"
 .PHONY : multi_turtlebots/CMakeFiles/rvo_test.dir/all
 
 # Include target in all.
@@ -1461,7 +1500,7 @@ clean: multi_turtlebots/CMakeFiles/rvo_test.dir/clean
 multi_turtlebots/CMakeFiles/cmdveltest.dir/all:
 	$(MAKE) -f multi_turtlebots/CMakeFiles/cmdveltest.dir/build.make multi_turtlebots/CMakeFiles/cmdveltest.dir/depend
 	$(MAKE) -f multi_turtlebots/CMakeFiles/cmdveltest.dir/build.make multi_turtlebots/CMakeFiles/cmdveltest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=10,11 "Built target cmdveltest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/siyang/multirobots_ws/build/CMakeFiles --progress-num=12,13 "Built target cmdveltest"
 .PHONY : multi_turtlebots/CMakeFiles/cmdveltest.dir/all
 
 # Include target in all.

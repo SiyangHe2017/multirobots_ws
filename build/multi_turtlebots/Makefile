@@ -421,6 +421,21 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/rule:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/rule
+.PHONY : multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/rule
+
+# Convenience name for target.
+advanced_move_four_robot: multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/rule
+
+.PHONY : advanced_move_four_robot
+
+# fast build rule for target.
+advanced_move_four_robot/fast:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build
+.PHONY : advanced_move_four_robot/fast
+
+# Convenience name for target.
 multi_turtlebots/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f CMakeFiles/Makefile2 multi_turtlebots/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : multi_turtlebots/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
@@ -738,6 +753,33 @@ include/RVOSimulator.cpp.s:
 	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/RVO.dir/build.make multi_turtlebots/CMakeFiles/RVO.dir/include/RVOSimulator.cpp.s
 .PHONY : include/RVOSimulator.cpp.s
 
+src/advanced_move_four_robot.o: src/advanced_move_four_robot.cpp.o
+
+.PHONY : src/advanced_move_four_robot.o
+
+# target to build an object file
+src/advanced_move_four_robot.cpp.o:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/src/advanced_move_four_robot.cpp.o
+.PHONY : src/advanced_move_four_robot.cpp.o
+
+src/advanced_move_four_robot.i: src/advanced_move_four_robot.cpp.i
+
+.PHONY : src/advanced_move_four_robot.i
+
+# target to preprocess a source file
+src/advanced_move_four_robot.cpp.i:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/src/advanced_move_four_robot.cpp.i
+.PHONY : src/advanced_move_four_robot.cpp.i
+
+src/advanced_move_four_robot.s: src/advanced_move_four_robot.cpp.s
+
+.PHONY : src/advanced_move_four_robot.s
+
+# target to generate assembly for a file
+src/advanced_move_four_robot.cpp.s:
+	cd /home/siyang/multirobots_ws/build && $(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/src/advanced_move_four_robot.cpp.s
+.PHONY : src/advanced_move_four_robot.cpp.s
+
 src/advanced_move_two_robot.o: src/advanced_move_two_robot.cpp.o
 
 .PHONY : src/advanced_move_two_robot.o
@@ -1038,6 +1080,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... advanced_move_four_robot"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
@@ -1064,6 +1107,9 @@ help:
 	@echo "... include/RVOSimulator.o"
 	@echo "... include/RVOSimulator.i"
 	@echo "... include/RVOSimulator.s"
+	@echo "... src/advanced_move_four_robot.o"
+	@echo "... src/advanced_move_four_robot.i"
+	@echo "... src/advanced_move_four_robot.s"
 	@echo "... src/advanced_move_two_robot.o"
 	@echo "... src/advanced_move_two_robot.i"
 	@echo "... src/advanced_move_two_robot.s"

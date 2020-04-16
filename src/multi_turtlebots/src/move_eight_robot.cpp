@@ -70,7 +70,10 @@ void setupScenario(RVO::RVOSimulator* sim) {
 
 void setPositionToRVO(RVO::RVOSimulator *sim){
   for(std::size_t i=0; i < sim->getNumAgents(); ++i){
+    float temp_velocity_x = std::cos(tb3_theta[i]) * tb3_linear_velocity[i];
+    float temp_velocity_y = std::sin(tb3_theta[i]) * tb3_linear_velocity[i];
     sim->setAgentPosition(i, RVO::Vector2(tb3_x_position[i], tb3_y_position[i]));
+    sim->setAgentVelocity(i, RVO::Vector2(temp_velocity_x, temp_velocity_y));
   }
 }
 

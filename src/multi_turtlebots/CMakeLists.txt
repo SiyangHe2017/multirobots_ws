@@ -161,6 +161,7 @@ add_executable(move_four_robot src/move_four_robot.cpp)
 add_executable(move_eight_robot src/move_eight_robot.cpp)
 add_executable(move_eight_circle_robot src/move_eight_circle_robot.cpp)
 add_executable(move_four_robot_obstacles src/move_four_robot_obstacles.cpp)
+add_executable(advanced_move_four_robot src/advanced_move_four_robot.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -210,6 +211,10 @@ target_link_libraries(move_eight_circle_robot
 	RVO
 )
 target_link_libraries(move_four_robot_obstacles
+    ${catkin_LIBRARIES}
+	RVO
+)
+target_link_libraries(advanced_move_four_robot
     ${catkin_LIBRARIES}
 	RVO
 )

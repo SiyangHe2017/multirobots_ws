@@ -12,23 +12,24 @@
 #include <nav_msgs/Odometry.h>
 #include <tf/tf.h>
 
-#define ANGULAR_VELOCITY 0.5
+#define ANGULAR_VELOCITY 0.8
 #define PI 3.1415926
 #define K_GOAL_PARAMETER 0.3
-#define PREFER_VELOCITY_FACTOR 0.15
+#define PREFER_VELOCITY_FACTOR 0.25
 #define AGENT_NUMBER 4
-#define DYNAMIC_OBSTACLE_NUMBER 2
+#define TOTAL_NUMBER 5
 #define OBSTACLE_VELOCITY_FACTOR 0.25
 #define OBSTACLE_ANGULAR_VELOCITY 0.25
+#define OBSTACLE_LINEAR_VELOCITY 0.25
 
 
 std::vector<RVO::Vector2> goals;
-float tb3_x_position[AGENT_NUMBER];
-float tb3_y_position[AGENT_NUMBER];
-float tb3_theta[AGENT_NUMBER];
-float tb3_linear_velocity[AGENT_NUMBER];
-float tb3_angular_velocity[AGENT_NUMBER];
-bool tb3_reached[AGENT_NUMBER] = {0};
+float tb3_x_position[TOTAL_NUMBER];
+float tb3_y_position[TOTAL_NUMBER];
+float tb3_theta[TOTAL_NUMBER];
+float tb3_linear_velocity[TOTAL_NUMBER];
+float tb3_angular_velocity[TOTAL_NUMBER];
+bool tb3_reached[TOTAL_NUMBER] = {0};
 // float k_goal_parameter = 0.3;
 
 // float do_x_position[DYNAMIC_OBSTACLE_NUMBER]; // do short for dynamic obstacle
@@ -44,21 +45,20 @@ void setupScenario(RVO::RVOSimulator *sim)
 
   // setAgentDefaults (float neighborDist, size_t maxNeighbors, float timeHorizon, float timeHorizonObst, float radius, float maxSpeed, const Vector2 &velocity=Vector2())
   // Specify default parameters for agents that are subsequently added.
-  sim->setAgentDefaults(8.0f, 10.0f, 8.0f, 8.0f, 0.1f, 0.8f);
+  sim->setAgentDefaults(8.0f, 10.0f, 8.0f, 8.0f, 0.13f, 1.0f);
 
   // Add agents, specifying their start position.
   sim->addAgent(RVO::Vector2(-2.0f, -2.0f));
   sim->addAgent(RVO::Vector2(-2.0f, 2.0f)); // Notice here !!
   sim->addAgent(RVO::Vector2(2.0f, -2.0f));
+  sim->addAgent(RVO::Vector2(2.0f, 2.0f));  
   sim->addAgent(RVO::Vector2(1.0f, 0.0f));
-  sim->addAgent(RVO::Vector2(-0.5f, 0.0f));
+
 
   // Create goals (simulator is unaware of these).
-  for (std::size_t i = 0; i < sim->getNumAgents(); ++i)
+  for (std::size_t i = 0; i < AGENT_NUMBER; ++i)
   {
-    if(i<AGENT_NUMBER){
-      goals.push_back(-sim->getAgentPosition(i));
-    }
+    goals.push_back(-sim->getAgentPosition(i)); 
   }
 
   std::vector<RVO::Vector2> obstacle1, obstacle2, obstacle3, obstacle4;
@@ -104,11 +104,15 @@ void setupScenario(RVO::RVOSimulator *sim)
   // Obstacles added to the simulation after this function has been called are not accounted for in the simulatio
 }
 
+// setPositionToRVO actually is setPositionVelocityToRVO
 void setPositionToRVO(RVO::RVOSimulator *sim)
 {
   for (std::size_t i = 0; i < sim->getNumAgents(); ++i)
   {
+    float temp_velocity_x = std::cos(tb3_theta[i]) * tb3_linear_velocity[i];
+    float temp_velocity_y = std::sin(tb3_theta[i]) * tb3_linear_velocity[i];
     sim->setAgentPosition(i, RVO::Vector2(tb3_x_position[i], tb3_y_position[i]));
+    sim->setAgentVelocity(i, RVO::Vector2(temp_velocity_x, temp_velocity_y));
   }
 }
 
@@ -117,8 +121,11 @@ void setPreferredVelocities(RVO::RVOSimulator *sim)
   // Set the preferred velocity for each agent.
   for (std::size_t i = 0; i < sim->getNumAgents(); ++i)
   {
+    float temp_velocity_x = std::cos(tb3_theta[i]) * tb3_linear_velocity[i];
+    float temp_velocity_y = std::sin(tb3_theta[i]) * tb3_linear_velocity[i];
     if(i>=AGENT_NUMBER){
-      sim->setAgentPrefVelocity(i, RVO::Vector2(tb, 0.0f));
+      sim->setAgentPrefVelocity(i, OBSTACLE_VELOCITY_FACTOR * RVO::normalize(RVO::Vector2(temp_velocity_x, temp_velocity_y)));
+      continue;
     }
     else if (RVO::absSq(goals[i] - sim->getAgentPosition(i)) < K_GOAL_PARAMETER * sim->getAgentRadius(i) * sim->getAgentRadius(i))
     {
@@ -139,7 +146,6 @@ void setVelocityToTurtlebot3(RVO::RVOSimulator *sim)
   {
     // linear velocity stands for velocity in x
     tb3_linear_velocity[i] = RVO::abs(sim->getAgentVelocity(i));
-
     // angular velocity is determined by orientation and velocity tang
     float temp_orientation = tb3_theta[i];
     // float temp_velocity_tan = atan2(tb3_y_position[i], tb3_x_position[i]); // problem here !!
@@ -170,6 +176,11 @@ void setVelocityToTurtlebot3(RVO::RVOSimulator *sim)
       { // clockwise
         tb3_angular_velocity[i] = -ANGULAR_VELOCITY;
       }
+    }
+    // NOTICE HERE !!
+    if(i>=AGENT_NUMBER){ // tb3_5
+      tb3_linear_velocity[i] = OBSTACLE_LINEAR_VELOCITY;
+      tb3_angular_velocity[i] = OBSTACLE_ANGULAR_VELOCITY;
     }
     // when angular velocity is positive, it stands for counter clockwise
     // when angular velocity is negative, it stands for clockwise
@@ -300,10 +311,58 @@ void new_odom_tb3_3(const nav_msgs::Odometry::ConstPtr &msg)
   ROS_INFO("%f", msg->twist.twist.angular.y);
 }
 
+void new_odom_tb3_4(const nav_msgs::Odometry::ConstPtr &msg)
+{
+
+  tb3_x_position[4] = msg->pose.pose.position.x;
+  tb3_y_position[4] = msg->pose.pose.position.y;
+
+  tf::Quaternion q(
+      msg->pose.pose.orientation.x,
+      msg->pose.pose.orientation.y,
+      msg->pose.pose.orientation.z,
+      msg->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  double roll, pitch, yaw;
+  m.getRPY(roll, pitch, yaw);
+  tb3_theta[4] = yaw;
+
+  ROS_INFO("------tb3_4-----");
+  ROS_INFO("%f", tb3_x_position[4]);
+  ROS_INFO("%f", tb3_y_position[4]);
+  ROS_INFO("%f", tb3_theta[4]);
+  ROS_INFO("%f", msg->twist.twist.linear.x);
+  ROS_INFO("%f", msg->twist.twist.angular.y);
+}
+
+// void new_odom_tb3_5(const nav_msgs::Odometry::ConstPtr &msg)
+// {
+
+//   tb3_x_position[5] = msg->pose.pose.position.x;
+//   tb3_y_position[5] = msg->pose.pose.position.y;
+
+//   tf::Quaternion q(
+//       msg->pose.pose.orientation.x,
+//       msg->pose.pose.orientation.y,
+//       msg->pose.pose.orientation.z,
+//       msg->pose.pose.orientation.w);
+//   tf::Matrix3x3 m(q);
+//   double roll, pitch, yaw;
+//   m.getRPY(roll, pitch, yaw);
+//   tb3_theta[5] = yaw;
+
+//   ROS_INFO("------tb3_5-----");
+//   ROS_INFO("%f", tb3_x_position[5]);
+//   ROS_INFO("%f", tb3_y_position[5]);
+//   ROS_INFO("%f", tb3_theta[5]);
+//   ROS_INFO("%f", msg->twist.twist.linear.x);
+//   ROS_INFO("%f", msg->twist.twist.angular.y);
+// }
+
 bool reach_goal(RVO::RVOSimulator *sim)
 {
   bool result = true;
-  for (std::size_t i = 0; i < sim->getNumAgents(); i++)
+  for (std::size_t i = 0; i < AGENT_NUMBER; i++)
   {
     if (tb3_reached[i])
     {
@@ -339,8 +398,8 @@ int main(int argc, char **argv)
 
   ros::init(argc, argv, "move_four_robot");
   ros::NodeHandle nh;
-  ros::Subscriber tb3_sub[AGENT_NUMBER];
-  ros::Publisher tb3_pub[AGENT_NUMBER];
+  ros::Subscriber tb3_sub[TOTAL_NUMBER];
+  ros::Publisher tb3_pub[TOTAL_NUMBER];
   // notice the buffer size is one. ----------------here--------
   tb3_sub[0] = nh.subscribe("/tb3_0/odom", 1, new_odom_tb3_0);
   tb3_pub[0] = nh.advertise<geometry_msgs::Twist>("/tb3_0/cmd_vel", 1);
@@ -350,6 +409,9 @@ int main(int argc, char **argv)
   tb3_pub[2] = nh.advertise<geometry_msgs::Twist>("/tb3_2/cmd_vel", 1);
   tb3_sub[3] = nh.subscribe("/tb3_3/odom", 1, new_odom_tb3_3);
   tb3_pub[3] = nh.advertise<geometry_msgs::Twist>("/tb3_3/cmd_vel", 1);
+  tb3_sub[4] = nh.subscribe("/tb3_4/odom", 1, new_odom_tb3_4);
+  tb3_pub[4] = nh.advertise<geometry_msgs::Twist>("/tb3_4/cmd_vel", 1);
+
 
   RVO::RVOSimulator *sim = new RVO::RVOSimulator();
   setupScenario(sim);

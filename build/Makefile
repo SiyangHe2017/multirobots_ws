@@ -504,6 +504,19 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named advanced_move_four_robot
+
+# Build rule for target.
+advanced_move_four_robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 advanced_move_four_robot
+.PHONY : advanced_move_four_robot
+
+# fast build rule for target.
+advanced_move_four_robot/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build.make multi_turtlebots/CMakeFiles/advanced_move_four_robot.dir/build
+.PHONY : advanced_move_four_robot/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -724,6 +737,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... advanced_move_four_robot"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
