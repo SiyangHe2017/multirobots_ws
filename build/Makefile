@@ -374,6 +374,19 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named move_four_robot_obstacles
+
+# Build rule for target.
+move_four_robot_obstacles: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_four_robot_obstacles
+.PHONY : move_four_robot_obstacles
+
+# fast build rule for target.
+move_four_robot_obstacles/fast:
+	$(MAKE) -f multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/build.make multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/build
+.PHONY : move_four_robot_obstacles/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -701,6 +714,7 @@ help:
 	@echo "... basic_move_robot"
 	@echo "... odometry_test"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... move_four_robot_obstacles"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"

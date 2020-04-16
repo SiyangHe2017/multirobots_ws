@@ -194,6 +194,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "multi_turtlebots/CMakeFiles/basic_move_robot.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/odometry_test.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "multi_turtlebots/CMakeFiles/move_four_robot_obstacles.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake"
   "multi_turtlebots/CMakeFiles/geometry_msgs_generate_messages_eus.dir/DependInfo.cmake"
