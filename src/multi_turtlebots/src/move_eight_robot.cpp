@@ -68,6 +68,7 @@ void setupScenario(RVO::RVOSimulator* sim) {
   // Obstacles added to the simulation after this function has been called are not accounted for in the simulatio
 }
 
+// better to ignore the velocity transfer to RVO to make it sometimes cause osillation
 void setPositionToRVO(RVO::RVOSimulator *sim){
   for(std::size_t i=0; i < sim->getNumAgents(); ++i){
     float temp_velocity_x = std::cos(tb3_theta[i]) * tb3_linear_velocity[i];
